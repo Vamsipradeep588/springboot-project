@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.*;
 import com.example.springboot_project.model.Book;
 import com.example.springboot_project.service.BookH2Service;
 import org.springframework.web.server.ResponseStatusException;
-
-import java.util.ArrayList;
+import com.example.springboot_project.service.BookJpaService;
+import java.util.*;
 
 @RestController
 public class BookController {
 
     @Autowired
-    public BookH2Service bookService;
+    public BookJpaService bookService;
 
     @GetMapping("/books")
     public ArrayList<Book> getBooks() {
